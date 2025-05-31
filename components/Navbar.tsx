@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import {
   Menu,
@@ -12,14 +13,27 @@ import {
   Mail
 } from 'lucide-react'
 
+const navLinks = [
+  { href: '/', label: 'Home', icon: Home },
+  { href: '/about', label: 'About', icon: Star },
+  { href: '/pricing', label: 'Pricing', icon: DollarSign },
+  { href: '/faq', label: 'FAQ', icon: HelpCircle },
+  { href: '/contact', label: 'Contact Us', icon: Mail },
+]
+
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const pathname = usePathname()
 
-  const navTextStyle =
-    'transition-colors hover:text-purple-600 text-gray-700 font-medium'
+  const navTextStyle = (active: boolean) =>
+    `p-1 rounded-lg !no-underline hover:no-underline font-medium transition-colors ${
+      active ? 'text-purple-700 bg-purple-200' : 'text-gray-700 hover:text-purple-600 hover:bg-purple-200'
+    }`
 
-  const navIconStyle =
-    'transition-all hover:text-purple-600 hover:scale-110 text-purple-700'
+  const navIconStyle = (active: boolean) =>
+    `p-1 rounded-lg transition-all ${
+      active ? 'text-purple-700 bg-purple-200' : 'text-purple-700 hover:text-purple-600 hover:scale-110 hover:bg-purple-200'
+    }`
 
   return (
     <nav className="bg-white border-b border-gray-200 px-4 py-3 shadow-md relative z-50">
@@ -31,22 +45,32 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex space-x-6 items-center">
-          <Link href="/" className={`hover:bg-purple-200 p-1 !no-underline  !hover:no-underline rounded-lg ${navTextStyle}`}>Home</Link>
-          <Link href="/pricing" className={`hover:bg-purple-200 p-1  !no-underline hover:no-underline rounded-lg ${navTextStyle}`}>Pricing</Link>
-          <Link href="/qa" className={`hover:bg-purple-200 p-1 !no-underline hover:no-underline rounded-lg ${navTextStyle}`}>Q&A</Link>
-          <Link href="/features" className={`hover:bg-purple-200 p-1 !no-underline hover:no-underline rounded-lg ${navTextStyle}`}>Features</Link>
-          <Link href="/contact" className={`hover:bg-purple-200 p-1 !no-underline hover:no-underline rounded-lg ${navTextStyle}`}>Contact Us</Link>
+          {navLinks.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              className={navTextStyle(pathname === href)}
+            >
+              {label}
+            </Link>
+          ))}
         </div>
 
         {/* Mobile Top Nav - Icons */}
-        <div className="flex md:hidden items-center ">
-          <Link href="/pricing" className={`hover:bg-purple-200 p-1  rounded-lg ${navIconStyle}`} aria-label="Pricing"><DollarSign size={14} /></Link>
-          <Link href="/qa" className={`hover:bg-purple-200 p-1 rounded-lg ${navIconStyle}`} aria-label="Q&A"><HelpCircle size={14} /></Link>
-          <Link href="/features" className={`hover:bg-purple-200 p-1 rounded-lg ${navIconStyle}`} aria-label="Features"><Star size={14} /></Link>
-          <Link href="/contact" className={`hover:bg-purple-200 p-1  rounded-lg ${navIconStyle}`} aria-label="Contact"><Mail size={14} /></Link>
+        <div className="flex md:hidden items-center space-x-1">
+          {navLinks.map(({ href, icon: Icon }) => (
+            <Link
+              key={href}
+              href={href}
+              className={navIconStyle(pathname === href)}
+              aria-label={href}
+            >
+              <Icon size={14} />
+            </Link>
+          ))}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className={`${navIconStyle} focus:outline-none !p-2`}
+            className="p-2 text-purple-700 hover:text-purple-600 focus:outline-none"
           >
             {menuOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
@@ -57,26 +81,21 @@ export default function Navbar() {
       {menuOpen && (
         <div className="md:hidden mt-3 p-4 bg-white border rounded-lg shadow z-50">
           <ul className="space-y-3 text-purple-700">
-            <li className="flex hover:bg-purple-200 items-center space-x-2 p2 rounded-lg transition-colors hover:text-purple-600">
-              <Home size={20} />
-              <Link href="/">Home</Link>
-            </li>
-            <li className="flex hover:bg-purple-200 items-center space-x-2 p2 rounded-lg transition-colors hover:text-purple-600">
-              <DollarSign size={20} />
-              <Link href="/pricing">Pricing</Link>
-            </li>
-            <li className="flex hover:bg-purple-200 items-center space-x-2 p2 rounded-lg transition-colors hover:text-purple-600">
-              <HelpCircle size={20} />
-              <Link href="/qa">Q&A</Link>
-            </li>
-            <li className="flex hover:bg-purple-200 items-center space-x-2 p2 rounded-lg transition-colors hover:text-purple-600">
-              <Star size={20} />
-              <Link href="/features">Features</Link>
-            </li>
-            <li className="flex hover:bg-purple-200 items-center space-x-2 p2 rounded-lg transition-colors hover:text-purple-600">
-              <Mail size={20} />
-              <Link href="/contact">Contact Us</Link>
-            </li>
+            {navLinks.map(({ href, label, icon: Icon }) => (
+              <li
+                key={href}
+                className={`flex items-center space-x-2 p-2 rounded-lg transition-colors ${
+                  pathname === href
+                    ? 'bg-purple-200 text-purple-700'
+                    : 'hover:bg-purple-200 hover:text-purple-600'
+                }`}
+              >
+                <Icon size={20} />
+                <Link href={href} onClick={() => setMenuOpen(false)}>
+                  {label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       )}

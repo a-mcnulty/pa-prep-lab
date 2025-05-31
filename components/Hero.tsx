@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="w-full bg-[#f5f3ff] py-16 px-4 md:px-8 lg:px-16" id="contact">
+    <section className="w-full bg-[#f5f3ff] pt-18 px-4 md:px-8 lg:px-16" id="contact">
 
       <section className="flex bg-[#f5f3ff] flex-col md:flex-row items-center md:items-start justify-between min-h-[550px] max-w-7xl mx-auto px-10 py-12 md:py-20">
       {/* Text Block */}
