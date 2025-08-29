@@ -1,8 +1,6 @@
 import Hero from '@/components/Hero';
 import ContactForm from "@/components/ContactForm";
 
-import { CheckCircle, Mail } from "lucide-react";
-import { Lightbulb, BookOpen, Users, Star, Briefcase, ClipboardList } from "lucide-react";
 import PricingSection from '@/components/PricingSection';
 import AboutMe from '@/components/AboutMe';
 
