@@ -59,7 +59,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       />
       <button
         type="submit"
-        className="bg-purple-600 text-white p-3 rounded hover:bg-purple-700"
+        className="bg-[#3B6255] text-white p-3 rounded"
       >
         Send Message
       </button>
