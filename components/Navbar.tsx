@@ -1,5 +1,7 @@
 'use client'
 
+import Image from "next/image";
+import PaLab from '@/public/PaLab.webp'; // Replace with actual image path
 import { useState } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
@@ -27,24 +29,33 @@ export default function Navbar() {
 
   const navTextStyle = (active: boolean) =>
     `p-1 rounded-lg !no-underline hover:no-underline font-medium transition-colors ${
-      active ? 'text-purple-700 bg-purple-200' : 'text-gray-700 hover:text-purple-600 hover:bg-purple-200'
+      active ? 'bg-[#3B6255] bg-[#c7eddf]' : 'text-gray-700 hover:bg-[#c7eddf] hover:bg-[#c7eddf]'
     }`
 
   const navIconStyle = (active: boolean) =>
     `p-1 rounded-lg transition-all ${
-      active ? 'text-purple-700 bg-purple-200' : 'text-purple-700 hover:text-purple-600 hover:scale-110 hover:bg-purple-200'
+      active ? 'bg-[#3B6255] bg-[#c7eddf]' : ' hover:bg-[#508472] hover:scale-110 hover:bg-[#c7eddf]'
     }`
 
   return (
-    <nav className="bg-white border-b border-gray-200 px-4 py-3 shadow-md relative z-50">
+    <nav className="bg-[#e7f3ef] border-b border-gray-200 shadow-md relative z-50">
       <div className="flex justify-between items-center">
+        <div className="w-32 h-16 relative px-4">
+
         {/* Logo */}
         <Link href="/" className="text-2xl font-bold whitespace-nowrap text-purple-700">
-          PA Prep Lab
+          <Image
+            src={PaLab}
+            alt="PA Prep Lab Logo"
+  width={200}
+  height={200}
+  className="w-16 h-16 object-contain"
+          />
         </Link>
+        </div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex space-x-6 items-center">
+        <div className="hidden md:flex space-x-6 items-center  px-4 py-3">
           {navLinks.map(({ href, label }) => (
             <Link
               key={href}
@@ -57,7 +68,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Top Nav - Icons */}
-        <div className="flex md:hidden items-center space-x-1">
+        <div className="flex md:hidden items-center space-x-1  px-4 py-3">
           {navLinks.map(({ href, icon: Icon }) => (
             <Link
               key={href}
@@ -70,7 +81,7 @@ export default function Navbar() {
           ))}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="p-2 text-purple-700 hover:text-purple-600 focus:outline-none"
+            className="p-2 hover:bg-[#508472] text-[#3B6255] focus:outline-none"
           >
             {menuOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
@@ -80,14 +91,14 @@ export default function Navbar() {
       {/* Mobile Dropdown */}
       {menuOpen && (
         <div className="md:hidden mt-3 p-4 bg-white border rounded-lg shadow z-50">
-          <ul className="space-y-3 text-purple-700">
+          <ul className="space-y-3 text-[#3B6255]">
             {navLinks.map(({ href, label, icon: Icon }) => (
               <li
                 key={href}
                 className={`flex items-center space-x-2 p-2 rounded-lg transition-colors ${
                   pathname === href
-                    ? 'bg-purple-200 text-purple-700'
-                    : 'hover:bg-purple-200 hover:text-purple-600'
+                    ? 'bg-[#c7eddf] text-[#3B6255]'
+                    : 'hover:bg-[#c7eddf]'
                 }`}
               >
                 <Icon size={20} />

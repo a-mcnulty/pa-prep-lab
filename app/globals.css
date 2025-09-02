@@ -12,11 +12,11 @@ body {
 
 h1, h2, h3, h4 {
   font-weight: 600;
-  color: #7c3aed; /* Purple-600 */
+  color: #3B6255; /* Purple-600 */
 }
 
 a {
-  color: #8b5cf6; /* Purple-500 */
+  color: #508472; /* Purple-500 */
   text-decoration: none;
 }
 
@@ -25,7 +25,7 @@ a:hover {
 }
 
 button {
-  border-color: #7c3aed;
+  border-color: #3B6255;
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
   transition: background-color 0.2s ease;
@@ -34,5 +34,7 @@ button {
 }
 
 button:hover {
-  background-color: #7c3aed; /* Purple-600 */
+  background-color: #c7eddf;
+  color: #3B6255;
+  border: 1 solid #3B6255;
 }
