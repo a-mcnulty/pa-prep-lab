@@ -1,6 +1,7 @@
 'use client';
 
 import { CheckCircle } from 'lucide-react';
+import Link from "next/link";
 
 // 🎨 Theme Colors
 const pricingColors = {
@@ -20,9 +21,9 @@ const pricingColors = {
 
 // 📝 Section Text
 const pricingText = {
-  heading: "Choose Your Plan",
+  heading: "PA Prep Lab Services",
   bundleTag: "Best Value",
-  button: "Get Started",
+  button: "Learn More",
 };
 
 // 💼 Packages Data
@@ -32,29 +33,32 @@ const packages = [
     price: "$70–$85",
     features: [
       "30–45 min 1:1 session",
-      "General guidance for PA school",
+      "Early guidance for successful PA certification",
       "Video or phone discussion",
     ],
+    description: 'Need help in a specific area? Have concerns you’d like to address? Generalized guidance towards PA school and admission. Includes 30-45 minutes of one-on-one video or phone discussion into the topics or areas of your concern.'
   },
   {
     title: "Essay / Statement Review",
     price: "From $50",
     features: [
-      "<2,500 chars: $50",
-      "2,500–5,000: $85",
-      "5,000–7,500: $100",
-      "7,500–10,000: $125",
+      "<2,500 characters: $50",
+      "2,500–5,000 characters: $85",
+      "5,000–7,500 characters: $100",
+      "7,500–10,000 characters: $125",
       "Optional call (20 min): $50",
     ],
+    description: 'Any statement or essay which you’d like guidance and editing. Review includes insights to content, grammar, and narrative. Please note, character count includes spaces to comply with CASPA guidelines. Turn around time is 5 business days.'
   },
   {
     title: "Mock Interview",
     price: "$175",
     features: [
-      "60-minute video interview",
+      "60-minute mock interview",
       "Interview readiness discussion",
-      "Realistic mock + feedback",
+      "Instant feedback",
     ],
+    description:'Everyone gets nervous about their PA school interviews, how can you really shine in just a few minutes with just a few questions? During this hour, we start with a small discussion regarding your readiness for the interview, a 20-30 minute mock interview, and a final debrief addressing our strengths and areas of improvement. All interviews take place over video.'
   },
 ];
 
@@ -63,13 +67,13 @@ const bundle = {
   price: "$350",
   features: [
     "Pre-PA Counseling Session (45 min)",
-    "Essay Review (1 personal statement + 2 small essays)",
+    "Essay Review (1 personal statement + 2 smaller essays)",
     "Mock Interview (1 hour)",
   ],
   isHighlighted: true,
 };
 
-export default function PricingSection() {
+export default function PricingSection({ pricingPage }: { pricingPage?: boolean }) {
   return (
     <section className={`${pricingColors.sectionBg} py-16 px-4 sm:px-6 lg:px-8`}>
       <div className="max-w-7xl mx-auto">
@@ -107,12 +111,15 @@ export default function PricingSection() {
                 ))}
               </ul>
             </div>
-
-            <button
-              className={`mt-6 w-full ${pricingColors.buttonBg} ${pricingColors.buttonText} py-2 rounded ${pricingColors.buttonHover} transition`}
-            >
-              {pricingText.button}
-            </button>
+            {!pricingPage && (
+              <Link href="/pricing">
+                <button
+                  className={`mt-6 w-full ${pricingColors.buttonBg} ${pricingColors.buttonText} py-2 rounded ${pricingColors.buttonHover} transition`}
+                >
+                  {pricingText.button}
+                </button>
+              </Link>
+            )}
           </div>
         </div>
 
@@ -142,12 +149,21 @@ export default function PricingSection() {
                   ))}
                 </ul>
               </div>
+              {pricingPage && (
+                <p className="text-sm text-gray-700 mt-4 leading-relaxed">
+                  {pkg.description}
+                </p>
+              )}
+              {!pricingPage && (
+                <Link href="/pricing">
+                  <button
 
-              <button
-                className={`mt-6 w-full ${pricingColors.buttonBg} ${pricingColors.buttonText} py-2 rounded hover:bg-[#2d4e42] transition`}
-              >
-                {pricingText.button}
-              </button>
+                    className={`mt-6 w-full ${pricingColors.buttonBg} ${pricingColors.buttonText} py-2 rounded hover:bg-[#2d4e42] transition`}
+                  >
+                    {pricingText.button}
+                  </button>
+                </Link>
+              )}
             </div>
           ))}
         </div>

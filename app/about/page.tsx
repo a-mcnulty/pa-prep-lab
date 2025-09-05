@@ -22,23 +22,23 @@ const aboutText = {
   questionsHeading: "Still Have Questions?",
 }
 
-const institutions = [
-  {
-    name: "Pacific University",
-    logo: "/pacific.webp",
-    alt: "Pacific University Logo",
-  },
-  {
-    name: "San Francisco State University",
-    logo: "/sfsu.webp",
-    alt: "San Francisco State University Logo",
-  },
-  {
-    name: "Kaiser Permanente",
-    logo: "/kaiser.webp",
-    alt: "Kaiser Permanente Logo",
-  },
-]
+// const institutions = [
+//   {
+//     name: "Pacific University",
+//     logo: "/pacific.webp",
+//     alt: "Pacific University Logo",
+//   },
+//   {
+//     name: "San Francisco State University",
+//     logo: "/sfsu.webp",
+//     alt: "San Francisco State University Logo",
+//   },
+//   {
+//     name: "Kaiser Permanente",
+//     logo: "/kaiser.webp",
+//     alt: "Kaiser Permanente Logo",
+//   },
+// ]
 
 
 export default function AboutPage() {
@@ -51,8 +51,8 @@ export default function AboutPage() {
             src="/about.webp"
             alt="Elysia Alva"
             width={300}
-            height={300}
-            className="rounded-full shadow-lg mx-auto lg:mx-0"
+            height={400}
+            className="rounded-2xl shadow-lg mx-auto lg:mx-0"
           />
         </div>
         <div>
@@ -73,7 +73,7 @@ export default function AboutPage() {
       {/* Logo Wall */}
       <section className="text-center">
         <div className="flex flex-wrap justify-center gap-6 grayscale opacity-80">
-          {institutions.map((institution, idx) => (
+          {/* {institutions.map((institution, idx) => (
             <Image
               key={idx}
               src={institution.logo}
@@ -82,7 +82,7 @@ export default function AboutPage() {
               height={60}
               className="object-contain h-12"
             />
-          ))}
+          ))} */}
         </div>
       </section>
 

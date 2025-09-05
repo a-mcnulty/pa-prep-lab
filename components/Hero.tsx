@@ -13,7 +13,7 @@ const heroColors = {
 // 📝 Text Content
 const heroText = {
   heading: "Start Your PA Journey With Confidence",
-  paragraph: "Personalized coaching, mock interviews, and application guidance from experienced PAs.",
+  paragraph: "Welcome to PA Prep Lab, your virtual workbench for all things relating to pre-PA! This is a space for all who are interested in becoming a PA or learning more about the journey. Services offered include general counseling, essay review and editing, and interview prep. Navigating PA applications and admissions is difficult, so let’s connect and collaborate.",
   primaryBtn: "Get Started",
   secondaryBtn: "Learn More",
 }

@@ -14,7 +14,7 @@ const aboutColors = {
 // 📝 Text content
 const aboutText = {
   heading: "Meet Elysia",
-  paragraph1: "I’m Elysia, a certified Physician Assistant with experience in Orthopedics and a deep passion for mentoring pre-PA students. I know firsthand how tough and competitive the journey can feel — because I’ve been there too.",
+  paragraph1: "I’m Elysia, a certified PA with clinical and educational experience and a deep passion for mentoring pre-PA students. I know firsthand how tough and competitive the journey can feel — because I’ve been there too.",
   paragraph2: "Through years of practice, mentoring, and admissions involvement, I’ve helped many future PAs refine their applications and build confidence. My goal is to offer the kind of clear, personal support I wish I had starting out.",
   linkText: "Read full bio →",
   linkHref: "/about",
