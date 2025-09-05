@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import Link from 'next/link'
 
 // 🎨 Theme Colors
 const heroColors = {
@@ -31,12 +32,16 @@ export default function Hero() {
             {heroText.paragraph}
           </p>
           <div className="mt-6 flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0">
-            <button className={`px-6 py-3 rounded-lg shadow transition ${heroColors.primaryBtn}`}>
-              {heroText.primaryBtn}
-            </button>
-            <button className={`px-6 py-3 rounded-lg shadow transition ${heroColors.secondaryBtn}`}>
-              {heroText.secondaryBtn}
-            </button>
+            <Link href="/pricing">
+              <button className={`px-6 py-3 rounded-lg shadow transition ${heroColors.primaryBtn}`}>
+                {heroText.primaryBtn}
+              </button>
+            </Link>
+            <Link href="/faq">
+              <button className={`px-6 py-3 rounded-lg shadow transition ${heroColors.secondaryBtn}`}>
+                {heroText.secondaryBtn}
+              </button>
+            </Link>
           </div>
         </div>
 
