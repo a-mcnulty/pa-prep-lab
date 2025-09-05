@@ -1,16 +1,35 @@
 'use client'
 
 import Image from 'next/image'
-import ContactForm from '@/components/ContactForm' // adjust path if needed
+import ContactForm from '@/components/ContactForm'
+
+// 🎨 Theme Colors
+const contactColors = {
+  heading: "text-[#3B6255]",
+  highlight: "text-[#3B6255] font-semibold",
+  text: "text-gray-600",
+}
+
+// 📝 Page Text
+const contactText = {
+  heading: "Contact Us",
+  subtitle: "We’ll reach out within",
+  timeframe: "48 hours",
+  nextSteps: "to discuss your needs and next steps.",
+}
 
 export default function ContactPage() {
   return (
     <main className="max-w-6xl mx-auto px-6 py-12 space-y-12">
       {/* Header */}
       <section className="text-center">
-        <h1 className="text-4xl font-bold text-purple-700 mb-4">Contact Us</h1>
-        <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-          We’ll reach out within <span className="font-semibold text-purple-700">48 hours</span> to discuss your needs and next steps.
+        <h1 className={`text-4xl font-bold mb-4 ${contactColors.heading}`}>
+          {contactText.heading}
+        </h1>
+        <p className={`text-lg max-w-2xl mx-auto ${contactColors.text}`}>
+          {contactText.subtitle}{" "}
+          <span className={contactColors.highlight}>{contactText.timeframe}</span>{" "}
+          {contactText.nextSteps}
         </p>
       </section>
 
@@ -24,7 +43,7 @@ export default function ContactPage() {
         {/* Image */}
         <div className="w-full lg:w-1/2 flex justify-center">
           <Image
-            src="/contact.webp" // make sure this image exists in /public
+            src="/contact.webp"
             alt="Person writing a message"
             width={600}
             height={400}
