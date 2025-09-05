@@ -33,9 +33,9 @@ const navColors = {
 const navLinks = [
   { href: '/', label: 'Home', icon: Home },
   { href: '/about', label: 'About', icon: Star },
-  { href: '/pricing', label: 'Pricing', icon: DollarSign },
+  { href: '/pricing', label: 'Services', icon: DollarSign },
   { href: '/faq', label: 'FAQ', icon: HelpCircle },
-  { href: '/contact', label: 'Contact Us', icon: Mail },
+  { href: '/contact', label: 'Contact', icon: Mail },
 ]
 
 // 🔧 Helpers
