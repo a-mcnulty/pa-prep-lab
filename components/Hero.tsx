@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link'
+import { siteContent } from '@/lib/content';
 
 // 🎨 Theme Colors
 const heroColors = {
@@ -11,14 +12,6 @@ const heroColors = {
   secondaryBtn: "bg-white text-[#3B6255] hover:bg-[#c7eddf]",
 }
 
-// 📝 Text Content
-const heroText = {
-  heading: "Start Your PA Journey With Confidence",
-  paragraph: "Welcome to PA Prep Lab, your virtual workbench for all things relating to pre-PA! This is a space for all who are interested in becoming a PA or learning more about the journey. Services offered include general counseling, essay review and editing, and interview prep. Navigating PA applications and admissions is difficult, so let’s connect and collaborate.",
-  primaryBtn: "Get Started",
-  secondaryBtn: "Learn More",
-}
-
 export default function Hero() {
   return (
     <section className={`w-full ${heroColors.background} pt-18 px-4 md:px-8 lg:px-16`} id="contact">
@@ -26,20 +19,20 @@ export default function Hero() {
         {/* Text Block */}
         <div className="md:w-1/2 pr-5 text-left space-y-6">
           <h1 className={`text-2xl md:text-3xl font-bold ${heroColors.heading}`}>
-            {heroText.heading}
+            {siteContent.hero.heading}
           </h1>
           <p className={heroColors.paragraph}>
-            {heroText.paragraph}
+            {siteContent.hero.paragraph}
           </p>
           <div className="mt-6 flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0">
             <Link href="/pricing">
               <button className={`px-6 py-3 rounded-lg shadow transition ${heroColors.primaryBtn}`}>
-                {heroText.primaryBtn}
+                {siteContent.hero.primaryButton}
               </button>
             </Link>
             <Link href="/faq">
               <button className={`px-6 py-3 rounded-lg shadow transition ${heroColors.secondaryBtn}`}>
-                {heroText.secondaryBtn}
+                {siteContent.hero.secondaryButton}
               </button>
             </Link>
           </div>

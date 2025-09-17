@@ -2,22 +2,14 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import aboutImg from '@/public/about.webp'; // Replace with actual image path
+import aboutImg from '@/public/about.webp';
+import { siteContent } from '@/lib/content';
 
 // 🎨 Theme colors
 const aboutColors = {
   heading: "text-2xl font-semibold mb-4",
   text: "text-gray-700 text-base leading-relaxed mb-4",
   link: "inline-block text-purple-600 font-semibold hover:text-purple-800 transition",
-}
-
-// 📝 Text content
-const aboutText = {
-  heading: "Meet Elysia",
-  paragraph1: "I’m Elysia, a certified PA with clinical and educational experience and a deep passion for mentoring pre-PA students. I know firsthand how tough and competitive the journey can feel — because I’ve been there too.",
-  paragraph2: "Through years of practice, mentoring, and admissions involvement, I’ve helped many future PAs refine their applications and build confidence. My goal is to offer the kind of clear, personal support I wish I had starting out.",
-  linkText: "Read full bio →",
-  linkHref: "/about",
 }
 
 export default function AboutMe() {
@@ -36,11 +28,11 @@ export default function AboutMe() {
 
         {/* Text */}
         <div>
-          <h2 className={aboutColors.heading}>{aboutText.heading}</h2>
-          <p className={aboutColors.text}>{aboutText.paragraph1}</p>
-          <p className={aboutColors.text}>{aboutText.paragraph2}</p>
-          <Link href={aboutText.linkHref} className={aboutColors.link}>
-            {aboutText.linkText}
+          <h2 className={aboutColors.heading}>{siteContent.about.heading}</h2>
+          <p className={aboutColors.text}>{siteContent.about.paragraph1}</p>
+          <p className={aboutColors.text}>{siteContent.about.paragraph2}</p>
+          <Link href={siteContent.about.linkHref} className={aboutColors.link}>
+            {siteContent.about.linkText}
           </Link>
         </div>
       </div>

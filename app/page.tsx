@@ -2,6 +2,7 @@ import Hero from '@/components/Hero';
 import ContactForm from "@/components/ContactForm";
 import PricingSection from '@/components/PricingSection';
 import AboutMe from '@/components/AboutMe';
+import { siteContent } from '@/lib/content';
 
 // 🎨 Theme & Text Constants
 const homePageStyles = {
@@ -9,10 +10,6 @@ const homePageStyles = {
   contactSection: "bg-gray-100 py-12 px-4",
   contactWrapper: "max-w-3xl mx-auto",
   heading: "text-3xl font-bold mb-6 text-center text-[#3B6255]",
-};
-
-const homePageText = {
-  contactHeading: "Contact Us",
 };
 
 export default function Home() {
@@ -30,7 +27,7 @@ export default function Home() {
       <section className={homePageStyles.contactSection}>
         <div className={homePageStyles.contactWrapper}>
           <h2 className={homePageStyles.heading}>
-            {homePageText.contactHeading}
+            {siteContent.pages.home.contactHeading}
           </h2>
           <ContactForm />
         </div>

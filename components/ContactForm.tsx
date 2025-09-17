@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { siteContent } from '@/lib/content';
 
 // 🎨 Colors & Styles
 const formStyles = {
@@ -11,26 +12,6 @@ const formStyles = {
   button: "bg-[#3B6255] text-white p-3 rounded hover:bg-[#2d4a40] transition",
   success: "text-green-600",
   error: "text-red-600",
-};
-
-export const servicesList = [
-  { id: 'counseling', label: 'Counseling' },
-  { id: 'essay', label: 'Essay help' },
-  { id: 'mock', label: 'Mock interview prep' },
-  { id: 'bundle', label: 'Bundle' },
-  { id: 'notSure', label: 'Not sure' },
-];
-
-// 📌 Placeholder text
-const placeholders = {
-  name: "Your Name",
-  email: "Your Email",
-  status: "Where are you in your PA journey?",
-  message: "Let’s connect! Where do you want to start? What can I do for you?",
-  services: "Services interested in (click all that apply)",
-  button: "Send Message",
-  success: "Thanks for your submission! I look forward to connecting. Responses should be received via email within 3 business days. ",
-  error: "Something went wrong. Please try later or email us directly at contact@papreplab.com",
 };
 
 export default function ContactForm() {
@@ -52,7 +33,7 @@ export default function ContactForm() {
     const data = {
       name: formData.get("name"),
       email: formData.get("email"),
-      services: formData.get("services"),
+      services: selectedServices.join(", "),
       status: formData.get("status"),
       message: formData.get("message"),
     };
@@ -75,26 +56,26 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className={formStyles.wrapper}>
-      <p className="text-sm text-gray-500 mt-4 leading-relaxed">{placeholders.name}</p>
+      <p className="text-sm text-gray-500 mt-4 leading-relaxed">{siteContent.contactForm.placeholders.name}</p>
       <input
         name="name"
         required
-        placeholder={placeholders.name}
+        placeholder={siteContent.contactForm.placeholders.name}
         className={formStyles.input}
       />
-      <p className="text-sm text-gray-500 mt-4 leading-relaxed">{placeholders.email}</p>
+      <p className="text-sm text-gray-500 mt-4 leading-relaxed">{siteContent.contactForm.placeholders.email}</p>
       <input
         name="email"
         type="email"
         required
-        placeholder={placeholders.email}
+        placeholder={siteContent.contactForm.placeholders.email}
         className={formStyles.input}
       />
       <div className="space-y-2">
-        <p className="text-sm text-gray-500 mt-4 leading-relaxed">{placeholders.services}</p>
+        <p className="text-sm text-gray-500 mt-4 leading-relaxed">{siteContent.contactForm.placeholders.services}</p>
         <br/>
         <div className="flex flex-wrap gap-3">
-          {servicesList.map(({ id, label }) => (
+          {siteContent.contactForm.services.map(({ id, label }) => (
             <button
               type="button"
               key={id}
@@ -110,28 +91,28 @@ export default function ContactForm() {
           ))}
         </div>
       </div>
-      <p className="text-sm text-gray-500 mt-4 leading-relaxed">{placeholders.status}</p>
+      <p className="text-sm text-gray-500 mt-4 leading-relaxed">{siteContent.contactForm.placeholders.status}</p>
       <textarea
         name="status"
         required
-        placeholder={placeholders.status}
+        placeholder={siteContent.contactForm.placeholders.status}
         className={formStyles.smallTextarea}
       />
-      <p className="text-sm text-gray-500 mt-4 leading-relaxed">{placeholders.message}</p>
+      <p className="text-sm text-gray-500 mt-4 leading-relaxed">{siteContent.contactForm.placeholders.message}</p>
       <textarea
         name="message"
         required
-        placeholder={placeholders.message}
+        placeholder={siteContent.contactForm.placeholders.message}
         className={formStyles.textarea}
       />
       <button type="submit" className={formStyles.button}>
-        {placeholders.button}
+        {siteContent.contactForm.button}
       </button>
       {status === "success" && (
-        <p className={formStyles.success}>{placeholders.success}</p>
+        <p className={formStyles.success}>{siteContent.contactForm.successMessage}</p>
       )}
       {status === "error" && (
-        <p className={formStyles.error}>{placeholders.error}</p>
+        <p className={formStyles.error}>{siteContent.contactForm.errorMessage}</p>
       )}
     </form>
   );
