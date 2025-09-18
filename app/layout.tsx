@@ -2,6 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import Analytics from '@/components/Analytics'
 
 export const metadata: Metadata = {
   title: 'PA Prep Lab',
@@ -16,6 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex flex-col min-h-screen">
+        <Analytics />
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { siteContent } from '@/lib/content';
+import { trackContactFormSubmission } from '@/lib/analytics';
 
 // 🎨 Colors & Styles
 const formStyles = {
@@ -59,6 +60,8 @@ export default function ContactForm() {
     if (res.ok) {
       setStatus("success");
       form?.reset();
+      // Track successful form submission
+      trackContactFormSubmission(selectedServices);
     } else {
       setStatus("error");
     }

@@ -3,6 +3,7 @@
 import { CheckCircle } from 'lucide-react';
 import Link from "next/link";
 import { siteContent } from '@/lib/content';
+import { trackApplyButtonClick, trackPricingCardClick } from '@/lib/analytics';
 
 // 🎨 Theme Colors
 const pricingColors = {
@@ -86,7 +87,10 @@ export default function PricingSection({ pricingPage }: { pricingPage?: boolean 
               </Link>
             ) : (
               <button
-                onClick={() => handleApply(['bundle'])}
+                onClick={() => {
+                  trackApplyButtonClick('Complete Bundle');
+                  handleApply(['bundle']);
+                }}
                 className={`mt-6 w-full ${pricingColors.buttonBg} ${pricingColors.buttonText} py-2 rounded ${pricingColors.buttonHover} transition-colors duration-200`}
               >
                 Apply for Bundle
@@ -142,6 +146,7 @@ export default function PricingSection({ pricingPage }: { pricingPage?: boolean 
                       'Essay / Statement Review': ['essay'],
                       'Mock Interview': ['mock']
                     };
+                    trackApplyButtonClick(pkg.title);
                     handleApply(serviceMap[pkg.title] || ['counseling']);
                   }}
                   className={`mt-6 w-full ${pricingColors.buttonBg} ${pricingColors.buttonText} py-2 rounded hover:bg-[#2d4e42] transition-colors duration-200`}
