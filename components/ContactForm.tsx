@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { siteContent } from '@/lib/content';
 
 // 🎨 Colors & Styles
@@ -16,8 +16,18 @@ const formStyles = {
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
-
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
+
+  // Listen for pre-selection events from pricing cards
+  useEffect(() => {
+    const handlePreSelectServices = (event: any) => {
+      const { serviceIds } = event.detail;
+      setSelectedServices(serviceIds);
+    };
+
+    window.addEventListener('preSelectServices', handlePreSelectServices);
+    return () => window.removeEventListener('preSelectServices', handlePreSelectServices);
+  }, []);
 
   const handleServiceChange = (id: string) => {
     setSelectedServices((prev) =>
@@ -74,20 +84,23 @@ export default function ContactForm() {
       <div className="space-y-2">
         <p className="text-sm text-gray-500 mt-4 leading-relaxed">{siteContent.contactForm.placeholders.services}</p>
         <br/>
-        <div className="flex flex-wrap gap-3">
+        <div className="space-y-3">
           {siteContent.contactForm.services.map(({ id, label }) => (
-            <button
-              type="button"
-              key={id}
-              onClick={() => handleServiceChange(id)}
-              className={`px-4 py-2 rounded-lg border transition ${
-                selectedServices.includes(id)
-                  ? 'bg-[#3B6255] text-white border-[#3B6255]'
-                  : 'bg-[#c7eddf] text-gray-700 border-gray-300 hover:bg-[#3B6255]'
-              }`}
-            >
-              {label}
-            </button>
+            <div key={id} className="flex items-center">
+              <input
+                type="checkbox"
+                id={id}
+                checked={selectedServices.includes(id)}
+                onChange={() => handleServiceChange(id)}
+                className="w-4 h-4 text-[#3B6255] bg-gray-100 border-gray-300 rounded focus:ring-[#3B6255] focus:ring-2"
+              />
+              <label
+                htmlFor={id}
+                className="ml-3 text-sm font-medium text-gray-700 cursor-pointer select-none"
+              >
+                {label}
+              </label>
+            </div>
           ))}
         </div>
       </div>
