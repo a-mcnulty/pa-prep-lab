@@ -1,8 +1,17 @@
 import Hero from '@/components/Hero';
-import ContactForm from "@/components/ContactForm";
-import PricingSection from '@/components/PricingSection';
-import AboutMe from '@/components/AboutMe';
 import { siteContent } from '@/lib/content';
+import dynamic from 'next/dynamic';
+
+// Lazy load below-the-fold components
+const ContactForm = dynamic(() => import("@/components/ContactForm"), {
+  loading: () => <div className="animate-pulse bg-gray-200 h-48 rounded"></div>
+});
+const PricingSection = dynamic(() => import('@/components/PricingSection'), {
+  loading: () => <div className="animate-pulse bg-gray-200 h-64 rounded"></div>
+});
+const AboutMe = dynamic(() => import('@/components/AboutMe'), {
+  loading: () => <div className="animate-pulse bg-gray-200 h-32 rounded"></div>
+});
 
 // 🎨 Theme & Text Constants
 const homePageStyles = {

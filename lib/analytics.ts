@@ -13,7 +13,7 @@ declare global {
 
 export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
-// Initialize Google Analytics
+// Initialize Google Analytics with delayed loading
 export const initGA = () => {
   if (!GA_MEASUREMENT_ID) {
     console.warn('Google Analytics Measurement ID not found');
@@ -28,17 +28,27 @@ export const initGA = () => {
     window.dataLayer.push(args);
   };
 
-  // Load gtag script
-  const script = document.createElement('script');
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-  script.async = true;
-  document.head.appendChild(script);
+  // Delay GA loading until after page load to avoid blocking
+  const loadGA = () => {
+    const script = document.createElement('script');
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
 
-  window.gtag('js', new Date());
-  window.gtag('config', GA_MEASUREMENT_ID, {
-    page_title: document.title,
-    page_location: window.location.href,
-  });
+    window.gtag('js', new Date());
+    window.gtag('config', GA_MEASUREMENT_ID, {
+      page_title: document.title,
+      page_location: window.location.href,
+    });
+  };
+
+  // Load GA after a brief delay to not block initial render
+  if (document.readyState === 'complete') {
+    setTimeout(loadGA, 100);
+  } else {
+    window.addEventListener('load', () => setTimeout(loadGA, 100));
+  }
 };
 
 // Track page views
