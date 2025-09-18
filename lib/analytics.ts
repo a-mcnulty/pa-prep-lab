@@ -1,7 +1,13 @@
 // Google Analytics 4 Configuration
+type GtagFunction = {
+  (...args: unknown[]): void;
+  q?: unknown[][];
+};
+
 declare global {
   interface Window {
-    gtag: (...args: any[]) => void;
+    gtag: GtagFunction;
+    dataLayer: unknown[];
   }
 }
 
@@ -14,17 +20,19 @@ export const initGA = () => {
     return;
   }
 
+  // Initialize dataLayer
+  window.dataLayer = window.dataLayer || [];
+
+  // Initialize gtag function
+  window.gtag = window.gtag || function(...args: unknown[]) {
+    window.dataLayer.push(args);
+  };
+
   // Load gtag script
   const script = document.createElement('script');
   script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
   script.async = true;
   document.head.appendChild(script);
-
-  // Initialize gtag
-  window.gtag = window.gtag || function() {
-    (window.gtag as any).q = (window.gtag as any).q || [];
-    (window.gtag as any).q.push(arguments);
-  };
 
   window.gtag('js', new Date());
   window.gtag('config', GA_MEASUREMENT_ID, {

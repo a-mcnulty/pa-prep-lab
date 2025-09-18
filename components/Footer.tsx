@@ -1,3 +1,5 @@
+'use client';
+
 import Link from "next/link";
 import { siteContent } from '@/lib/content';
 import { trackEmailClick, trackPhoneClick } from '@/lib/analytics';

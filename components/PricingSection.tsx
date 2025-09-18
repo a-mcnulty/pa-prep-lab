@@ -3,7 +3,7 @@
 import { CheckCircle } from 'lucide-react';
 import Link from "next/link";
 import { siteContent } from '@/lib/content';
-import { trackApplyButtonClick, trackPricingCardClick } from '@/lib/analytics';
+import { trackApplyButtonClick } from '@/lib/analytics';
 
 // 🎨 Theme Colors
 const pricingColors = {
