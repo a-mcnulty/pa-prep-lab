@@ -51,7 +51,7 @@ export default function PricingPage() {
       </section>
 
       {/* Contact */}
-      <section className="max-w-3xl mx-auto">
+      <section id="contact-form" className="max-w-3xl mx-auto">
         <h2
           className={`text-2xl font-semibold mb-4 text-center ${pricingColors.sectionTitle}`}
         >

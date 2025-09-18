@@ -17,16 +17,14 @@ import {
 
 // 🎨 Colors & styles
 const navColors = {
-  bg: 'bg-[#e7f3ef]',
-  border: 'border-gray-200',
-  shadow: 'shadow-md',
-  linkActive: 'bg-[#c7eddf] text-[#3B6255]',
-  linkInactive: 'text-gray-700 hover:bg-[#c7eddf]',
-  iconActive: 'bg-[#c7eddf] text-[#3B6255]',
-  iconInactive: 'hover:bg-[#c7eddf] hover:scale-110 text-gray-700',
-  mobileMenuBg: 'bg-white',
-  mobileMenuHover: 'hover:bg-[#c7eddf]',
-  toggleBtn: 'p-2 hover:bg-[#508472] text-[#3B6255]',
+  bg: 'bg-white border-b border-gray-100 shadow-md',
+  linkActive: 'text-[#3B6255] font-semibold bg-[#3B6255]/10',
+  linkInactive: 'text-gray-700 hover:text-[#3B6255]',
+  iconActive: 'text-[#3B6255] bg-[#3B6255]/10',
+  iconInactive: 'hover:text-[#3B6255] hover:scale-110 text-gray-700',
+  mobileMenuBg: 'bg-white/95 backdrop-blur-sm',
+  mobileMenuHover: 'hover:bg-[#c7eddf]/30',
+  toggleBtn: 'p-2 rounded-lg hover:text-[#3B6255] hover:bg-[#3B6255]/10 hover:scale-105 text-gray-700 transition-all duration-200',
 }
 
 // 📌 Navigation links
@@ -40,12 +38,12 @@ const navLinks = [
 
 // 🔧 Helpers
 const navTextStyle = (active: boolean) =>
-  `p-1 rounded-lg !no-underline hover:no-underline font-medium transition-colors ${
+  `px-3 py-2 rounded-lg !no-underline hover:no-underline transition-all duration-200 hover:bg-[#3B6255]/10 hover:scale-105 hover:shadow-sm ${
     active ? navColors.linkActive : navColors.linkInactive
   }`
 
 const navIconStyle = (active: boolean) =>
-  `p-1 rounded-lg transition-all ${
+  `p-2 rounded-lg transition-all duration-200 hover:bg-[#3B6255]/10 hover:shadow-sm ${
     active ? navColors.iconActive : navColors.iconInactive
   }`
 
@@ -54,23 +52,23 @@ export default function Navbar() {
   const pathname = usePathname()
 
   return (
-    <nav className={`${navColors.bg} border-b ${navColors.border} ${navColors.shadow} relative z-50`}>
-      <div className="flex justify-between items-center">
+    <nav className={`${navColors.bg} sticky top-0 z-50 py-4`}>
+      <div className="flex justify-between items-center max-w-7xl mx-auto px-4">
         {/* Logo */}
-        <div className="w-32 h-16 relative px-4">
-          <Link href="/" className="text-2xl font-bold whitespace-nowrap text-purple-700">
+        <div className="relative">
+          <Link href="/" className="block">
             <Image
               src={PaLab}
               alt="PA Prep Lab Logo"
               width={200}
               height={200}
-              className="w-16 h-16 object-contain"
+              className="w-20 h-20 object-contain hover:scale-105 transition-transform"
             />
           </Link>
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex space-x-6 items-center px-4 py-3">
+        <div className="hidden md:flex space-x-2 items-center">
           {navLinks.map(({ href, label }) => (
             <Link
               key={href}
@@ -83,7 +81,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Top Nav - Icons */}
-        <div className="flex md:hidden items-center space-x-1 px-4 py-3">
+        <div className="flex md:hidden items-center space-x-1">
           {navLinks.map(({ href, icon: Icon }) => (
             <Link
               key={href}
@@ -91,34 +89,35 @@ export default function Navbar() {
               className={navIconStyle(pathname === href)}
               aria-label={href}
             >
-              <Icon size={14} />
+              <Icon size={16} />
             </Link>
           ))}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className={navColors.toggleBtn}
           >
-            {menuOpen ? <X size={18} /> : <Menu size={18} />}
+            {menuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
 
       {/* Mobile Dropdown */}
       {menuOpen && (
-        <div className={`md:hidden mt-3 p-4 ${navColors.mobileMenuBg} border rounded-lg shadow z-50`}>
-          <ul className={`space-y-3 text-[#3B6255]`}>
+        <div className={`md:hidden absolute top-full left-4 right-4 mt-2 p-4 ${navColors.mobileMenuBg} rounded-lg shadow-xl border border-white/20 z-50`}>
+          <ul className={`space-y-2`}>
             {navLinks.map(({ href, label, icon: Icon }) => (
-              <li
-                key={href}
-                className={`flex items-center space-x-2 p-2 rounded-lg transition-colors ${
-                  pathname === href
-                    ? navColors.linkActive
-                    : navColors.mobileMenuHover
-                }`}
-              >
-                <Icon size={20} />
-                <Link href={href} onClick={() => setMenuOpen(false)}>
-                  {label}
+              <li key={href}>
+                <Link
+                  href={href}
+                  onClick={() => setMenuOpen(false)}
+                  className={`flex items-center space-x-3 p-3 rounded-lg transition-colors ${
+                    pathname === href
+                      ? 'bg-[#3B6255]/10 text-[#3B6255] font-semibold'
+                      : navColors.mobileMenuHover + ' text-gray-700'
+                  }`}
+                >
+                  <Icon size={18} />
+                  <span>{label}</span>
                 </Link>
               </li>
             ))}
