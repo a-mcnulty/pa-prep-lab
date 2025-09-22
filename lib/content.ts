@@ -36,10 +36,10 @@ export const siteContent = {
     packages: [
       {
         title: "Pre-PA Counseling",
-        price: "$70–$85",
+        price: "$70-$85",
         features: [
           "30–45 min 1:1 session",
-          "Early guidance for successful PA certification",
+          "Early guidance for all things Pre-PA",
           "Video or phone discussion",
         ],
         description: "Need help in a specific area? Have concerns you'd like to address? Generalized guidance towards PA school and admission. Includes 30-45 minutes of one-on-one video or phone discussion into the topics or areas of your concern."
@@ -48,7 +48,7 @@ export const siteContent = {
         title: "Essay / Statement Review",
         price: "From $50",
         features: [
-          "<2,500 characters: $50",
+          "< 2,500 characters: $50",
           "2,500–5,000 characters: $85",
           "5,000–7,500 characters: $100",
           "7,500–10,000 characters: $125",
@@ -60,8 +60,8 @@ export const siteContent = {
         title: "Mock Interview",
         price: "$175",
         features: [
-          "60-minute mock interview",
-          "Interview readiness discussion",
+          "60-minute video session",
+          "Mock Interview",
           "Instant feedback",
         ],
         description: "Everyone gets nervous about their PA school interviews, how can you really shine in just a few minutes with just a few questions? During this hour, we start with a small discussion regarding your readiness for the interview, a 20-30 minute mock interview, and a final debrief addressing our strengths and areas of improvement. All interviews take place over video."
