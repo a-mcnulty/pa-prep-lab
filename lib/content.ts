@@ -36,9 +36,9 @@ export const siteContent = {
     packages: [
       {
         title: "Pre-PA Counseling",
-        price: "$70–$85",
+        price: "$70 – $85",
         features: [
-          "30–45 min 1:1 session",
+          "30 – 45 min 1:1 session",
           "Early guidance for successful PA certification",
           "Video or phone discussion",
         ],
@@ -49,9 +49,9 @@ export const siteContent = {
         price: "From $50",
         features: [
           "<2,500 characters: $50",
-          "2,500–5,000 characters: $85",
-          "5,000–7,500 characters: $100",
-          "7,500–10,000 characters: $125",
+          "2,500 – 5,000 characters: $85",
+          "5,000 – 7,500 characters: $100",
+          "7,500 – 10,000 characters: $125",
           "Optional call (20 min): $50",
         ],
         description: "Any statement or essay which you'd like guidance and editing. Review includes insights to content, grammar, and narrative. Please note, character count includes spaces to comply with CASPA guidelines. Turn around time is 5 business days."
