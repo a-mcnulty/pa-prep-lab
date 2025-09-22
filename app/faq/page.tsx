@@ -59,7 +59,7 @@ const faqs = [
   {
     question: 'How can a counseling session strengthen my application?',
     answer:
-      'Counseling services are geared to your interests—whether that’s work experiences, classes, testing, essays, shadowing, or anything else. We’ll talk it through together.',
+      'Counseling services offered will be geared towards whatever topics you are interested in discussing. They can be about work experiences, classes, testing, essays, shadowing, etc. We’ll talk it through together.',
     icon: MessageCircle,
   },
   {
@@ -92,7 +92,7 @@ const faqs = [
   {
     question: 'What qualifications do you have?',
     answer:
-      'I’m a practicing PA, involved with pre-PA students, PA school interviews, and lectures. I hold a DMSc and stay active through CME and professional events.',
+      'I am a practicing Physician Assistant/Associate (PA) who regularly works with pre-PA students, PA students, PA school interviews, guest lectures for PA school, and I stay current in the field attending conferences and participating in relevant CMEs. I also have obtained my DMSc which has prepared me to continue to excel as a PA leader.',
     icon: ShieldCheck,
   },
   {
@@ -114,7 +114,7 @@ const faqs = [
   {
     question: 'Can you help on short notice?',
     answer:
-      'Often yes, though I work full-time in a surgical role. I prioritize your goals and do my best to accommodate urgent needs.',
+      'Often yes, though I work full-time; I prioritize your goals and do my best to accomodate urgent needs.',
     icon: Clock,
   },
 ]
