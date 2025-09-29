@@ -92,7 +92,7 @@ export const siteContent = {
 
   // 🦶 Footer
   footer: {
-    phone: "📞 (408)348-9881",
+    phone: "",
     email: "contact@papreplab.com",
     copyright: "PA Prep Lab. All rights reserved.",
     links: [
