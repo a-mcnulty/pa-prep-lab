@@ -13,8 +13,8 @@ export const siteContent = {
   // 👤 About Section
   about: {
     heading: "Meet Elysia",
-    paragraph1: "I'm Elysia, a certified PA with clinical and educational experience and a deep passion for mentoring pre-PA students. I know firsthand how tough and competitive the journey can feel — because I've been there too.",
-    paragraph2: "Through years of practice, mentoring, and admissions involvement, I've helped many future PAs refine their applications and build confidence. My goal is to offer the kind of clear, personal support I wish I had starting out.",
+    paragraph1: "I'm Elysia, a certified PA with clinical and educational experience and a deep passion for mentoring pre-PA students. I know firsthand how tough and competitive the journey can feel.",
+    paragraph2: "Through years of practice, mentoring, and admissions involvement, I've helped many future PAs refine their applications and build confidence. My goal is to offer you clear, personalized support through this time.",
     linkText: "Read full bio →",
     linkHref: "/about",
   },
@@ -36,9 +36,9 @@ export const siteContent = {
     packages: [
       {
         title: "Pre-PA Counseling",
-        price: "$70-$85",
+        price: "$70 - $85",
         features: [
-          "30–45 min 1:1 session",
+          "30 – 45 min 1:1 session",
           "Early guidance for all things Pre-PA",
           "Video or phone discussion",
         ],
@@ -49,9 +49,9 @@ export const siteContent = {
         price: "From $50",
         features: [
           "< 2,500 characters: $50",
-          "2,500–5,000 characters: $85",
-          "5,000–7,500 characters: $100",
-          "7,500–10,000 characters: $125",
+          "2,500 – 5,000 characters: $85",
+          "5,000 – 7,500 characters: $100",
+          "7,500 – 10,000 characters: $125",
           "Optional call (20 min): $50",
         ],
         description: "Any statement or essay which you'd like guidance and editing. Review includes insights to content, grammar, and narrative. Please note, character count includes spaces to comply with CASPA guidelines. Turn around time is 5 business days."
@@ -83,8 +83,8 @@ export const siteContent = {
     errorMessage: "Something went wrong. Please try later or email us directly at contact@papreplab.com",
     services: [
       { id: 'counseling', label: 'Counseling' },
-      { id: 'essay', label: 'Essay help' },
-      { id: 'mock', label: 'Mock interview prep' },
+      { id: 'essay', label: 'Essay Review' },
+      { id: 'mock', label: 'Mock interview' },
       { id: 'bundle', label: 'Bundle' },
       { id: 'notSure', label: 'Not sure' },
     ],

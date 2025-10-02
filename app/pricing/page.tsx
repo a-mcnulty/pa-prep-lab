@@ -29,7 +29,7 @@ const pricingText = {
   howItWorksTitle: "How it Works",
   faqTitle: "Let's Connect!",
   howItWorksBody: `If you’re interested in connecting, please reach out via email or our contact form.
-We’ll coordinate a convenient time for your sessions and confirm all deliverables based on your selected service(s).
+We’ll coordinate a convenient time for your sessions and confirm your selected service.
 Essay reviews will begin shortly after, and interviews or counseling sessions will be scheduled according to your availability.
 Everything is tailored to your pace and preferences, with prompt and supportive communication throughout.`,
 };
