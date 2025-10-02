@@ -60,7 +60,7 @@ export const siteContent = {
         title: "Mock Interview",
         price: "$175",
         features: [
-          "60-minute video session",
+          "60 minute video session",
           "Mock Interview",
           "Instant feedback",
         ],
