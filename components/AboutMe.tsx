@@ -24,6 +24,7 @@ export default function AboutMe() {
             width={400}
             height={500}
             sizes="(max-width: 768px) 100vw, 400px"
+            quality={85}
             className="max-w-md rounded-xl shadow-md w-full h-auto object-cover"
           />
         </div>

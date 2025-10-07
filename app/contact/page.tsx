@@ -47,6 +47,8 @@ export default function ContactPage() {
             alt="Person writing a message"
             width={600}
             height={400}
+            sizes="(max-width: 1024px) 100vw, 600px"
+            quality={85}
             className="rounded-lg shadow-lg object-cover"
             priority
           />

@@ -45,7 +45,8 @@ export default function Hero() {
             alt="Hero"
             width={600}
             height={600}
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 768px) 100vw, 600px"
+            quality={85}
             className="w-[600px] h-[600px] rounded-lg object-cover object-center"
             priority
           />
