@@ -64,7 +64,7 @@ export const siteContent = {
           "Mock Interview",
           "Instant feedback",
         ],
-        description: "Everyone gets nervous about their PA school interviews, how can you really shine in just a few minutes with just a few questions? During this hour, we start with a small discussion regarding your readiness for the interview, a 20-30 minute mock interview, and a final debrief addressing our strengths and areas of improvement. All interviews take place over video."
+        description: "Everyone gets nervous about their PA school interviews, how can you really shine in just a few minutes with just a few questions? During this hour, we start with a small discussion regarding your readiness for the interview, a 20-30 minute mock interview, and a final debrief addressing your strengths and areas of improvement. All interviews take place over video."
       },
     ],
   },
