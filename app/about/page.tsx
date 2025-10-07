@@ -17,7 +17,7 @@ const aboutText = {
     "Applying to PA school was intimidating; I felt like an average applicant. But through strategic school choices, helpful mentors, and a strong personal statement, I earned an offer from my top-choice program.",
     "Since becoming certified, I’ve worked with PA students, interviewed applicants for my alma mater, and completed my Doctorate of Medical Science. I love guiding others through their journey to becoming a PA.",
     "Outside of work, I enjoy music, food, gardening, and time with family. I look forward to supporting you on your path to becoming a PA!",
-    "I look forward to guiding and supporting you on your path to becoming a successful PA student and future PA!",
+    "",
   ],
   signature: "– Elysia Alva, DMSc, MPAS, PA-C",
   questionsHeading: "Still Have Questions?",
