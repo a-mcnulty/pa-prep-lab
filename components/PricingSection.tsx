@@ -93,7 +93,7 @@ export default function PricingSection({ pricingPage }: { pricingPage?: boolean 
                 }}
                 className={`mt-6 w-full ${pricingColors.buttonBg} ${pricingColors.buttonText} py-2 rounded ${pricingColors.buttonHover} transition-colors duration-200`}
               >
-                Apply for Bundle
+                Schedule Your Bundle
               </button>
             )}
           </div>
@@ -151,7 +151,7 @@ export default function PricingSection({ pricingPage }: { pricingPage?: boolean 
                   }}
                   className={`mt-6 w-full ${pricingColors.buttonBg} ${pricingColors.buttonText} py-2 rounded hover:bg-[#2d4e42] transition-colors duration-200`}
                 >
-                  Apply for {pkg.title}
+                  Schedule Your {pkg.title}
                 </button>
               )}
             </div>
