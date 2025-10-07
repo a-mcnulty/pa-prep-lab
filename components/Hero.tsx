@@ -39,14 +39,14 @@ export default function Hero() {
         </div>
 
         {/* Image Block */}
-        <div className="md:w-1/2 mt-10 pl-5 md:mt-0">
+        <div className="md:w-[40%] mt-10 pl-5 md:-mt-[50px]">
           <Image
             src="/hero.webp"
             alt="Hero"
             width={600}
-            height={400}
+            height={600}
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="w-full h-auto rounded-lg object-cover"
+            className="w-[600px] h-[600px] rounded-lg object-cover object-center"
             priority
           />
         </div>

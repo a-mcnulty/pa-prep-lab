@@ -10,12 +10,6 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   generateEtags: false,
   swcMinify: true,
-  modularizeImports: {
-    'lucide-react': {
-      transform: 'lucide-react/dist/esm/icons/{{member}}',
-      skipDefaultConversion: true,
-    },
-  },
   experimental: {
     optimizePackageImports: ['lucide-react'],
     webVitalsAttribution: ['CLS', 'LCP']

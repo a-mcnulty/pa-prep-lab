@@ -1,6 +1,6 @@
 'use client';
 
-import { CheckCircle } from 'lucide-react';
+import { CircleCheck } from 'lucide-react';
 import Link from "next/link";
 import { siteContent } from '@/lib/content';
 import { trackApplyButtonClick } from '@/lib/analytics';
@@ -69,7 +69,7 @@ export default function PricingSection({ pricingPage }: { pricingPage?: boolean 
                     key={feature}
                     className={`flex items-start text-sm ${pricingColors.featureText}`}
                   >
-                    <CheckCircle
+                    <CircleCheck
                       className={`w-4 h-4 ${pricingColors.featureIcon} mr-2 mt-0.5`}
                     />
                     {feature}
@@ -117,7 +117,7 @@ export default function PricingSection({ pricingPage }: { pricingPage?: boolean 
                       key={feature}
                       className={`flex items-start text-sm ${pricingColors.featureText}`}
                     >
-                      <CheckCircle
+                      <CircleCheck
                         className={`w-4 h-4 ${pricingColors.featureIcon} mr-2 mt-0.5`}
                       />
                       {feature}
