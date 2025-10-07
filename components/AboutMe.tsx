@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import aboutImg from '@/public/about.webp';
+import contactImg from '@/public/contact.webp';
 import { siteContent } from '@/lib/content';
 
 // 🎨 Theme colors
@@ -19,7 +19,7 @@ export default function AboutMe() {
         {/* Image */}
         <div className="flex justify-center w-full">
           <Image
-            src={aboutImg}
+            src={contactImg}
             alt="Elysia - PA Prep Lab Founder"
             width={400}
             height={500}
