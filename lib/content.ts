@@ -142,7 +142,7 @@ export const siteContent = {
     contact: {
       title: "Contact Us",
       subtitle: "We'll reach out within",
-      timeframe: "48 hours",
+      timeframe: "48-72 hours",
       nextSteps: "to discuss your needs and next steps.",
     },
   },
