@@ -1,5 +1,4 @@
 'use client';
-import Image from 'next/image';
 import Link from 'next/link'
 import { siteContent } from '@/lib/content';
 
@@ -14,10 +13,10 @@ const heroColors = {
 
 export default function Hero() {
   return (
-    <section className={`w-full ${heroColors.background} pt-18 px-4 md:px-8 lg:px-16`} id="contact">
-      <section className={`flex ${heroColors.background} flex-col md:flex-row items-center md:items-start justify-between min-h-[550px] max-w-7xl mx-auto px-10 py-12 md:py-20`}>
+    <section className={`w-full ${heroColors.background} pt-2 px-4 md:px-8 lg:px-16`} id="contact">
+      <section className={`flex ${heroColors.background} flex-col items-center justify-center min-h-[550px] max-w-7xl mx-auto px-10 py-8`}>
         {/* Text Block */}
-        <div className="md:w-1/2 pr-5 text-left space-y-6">
+        <div className="text-left space-y-6 max-w-3xl">
           <h1 className={`text-2xl md:text-3xl font-bold ${heroColors.heading}`}>
             {siteContent.hero.heading}
           </h1>
@@ -36,20 +35,6 @@ export default function Hero() {
               </button>
             </Link>
           </div>
-        </div>
-
-        {/* Image Block */}
-        <div className="md:w-[40%] mt-10 pl-5 md:-mt-[50px]">
-          <Image
-            src="/hero.webp"
-            alt="Hero"
-            width={600}
-            height={600}
-            sizes="(max-width: 768px) 100vw, 600px"
-            quality={85}
-            className="w-[600px] h-[600px] rounded-lg object-cover object-center"
-            priority
-          />
         </div>
       </section>
     </section>

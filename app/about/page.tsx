@@ -44,37 +44,46 @@ const aboutText = {
 
 export default function AboutPage() {
   return (
-    <main className="max-w-5xl mx-auto px-6 py-12 space-y-12">
+    <main className="space-y-12">
       {/* About Section */}
-      <section className="flex flex-col lg:flex-row items-center gap-8">
-        <div className="flex-shrink-0">
-          <Image
-            src="/about.webp"
-            alt="Elysia Alva"
-            width={300}
-            height={400}
-            className="rounded-2xl shadow-lg mx-auto lg:mx-0"
-          />
-        </div>
-        <div>
-          <h1 className={`text-3xl font-bold mb-4 ${aboutColors.primary}`}>
-            {aboutText.heading}
-          </h1>
-          <div className={`${aboutColors.secondary} space-y-4`}>
-            {aboutText.paragraphs.map((p, idx) => (
-              <p key={idx}>{p}</p>
-            ))}
-            <p className={`font-semibold ${aboutColors.primary}`}>
-              {aboutText.signature}
-            </p>
+      <section className="bg-[#e8e4dc] py-22 px-4 sm:px-6 lg:px-8 w-full">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
+          {/* Image */}
+          <div className="flex justify-center w-full">
+            <Image
+              src="/about.webp"
+              alt="Elysia Alva"
+              width={400}
+              height={500}
+              sizes="(max-width: 768px) 100vw, 400px"
+              quality={85}
+              className="max-w-md rounded-xl shadow-md w-[62%] h-auto object-cover"
+            />
+          </div>
+
+          {/* Text */}
+          <div>
+            <h1 className={`text-3xl font-bold mb-4 ${aboutColors.primary}`}>
+              {aboutText.heading}
+            </h1>
+            <div className={`${aboutColors.secondary} space-y-4`}>
+              {aboutText.paragraphs.map((p, idx) => (
+                <p key={idx}>{p}</p>
+              ))}
+              <p className={`font-semibold ${aboutColors.primary}`}>
+                {aboutText.signature}
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
+      <div className="max-w-5xl mx-auto px-6">
       {/* Logo Wall */}
+      {/*
       <section className="text-center">
         <div className="flex flex-wrap justify-center gap-6 grayscale opacity-80">
-          {/* {institutions.map((institution, idx) => (
+          {institutions.map((institution, idx) => (
             <Image
               key={idx}
               src={institution.logo}
@@ -83,11 +92,12 @@ export default function AboutPage() {
               height={60}
               className="object-contain h-12"
             />
-          ))} */}
+          ))}
         </div>
       </section>
+      */}
 
-      <section className="max-w-3xl mx-auto">
+      <section className="max-w-3xl mx-auto py-18">
         <h2
           className={`${aboutColors.sectionTitle} mb-4 text-center ${aboutColors.primary}`}
         >
@@ -95,6 +105,7 @@ export default function AboutPage() {
         </h2>
         <ContactForm />
       </section>
+      </div>
     </main>
   )
 }

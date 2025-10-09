@@ -43,7 +43,7 @@ export default function ContactPage() {
         {/* Image */}
         <div className="w-full lg:w-1/2 flex justify-center">
           <Image
-            src="/contact.webp"
+            src="/hero.webp"
             alt="Person writing a message"
             width={600}
             height={400}

@@ -15,7 +15,7 @@ const aboutColors = {
 export default function AboutMe() {
   return (
     <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-12 items-center">
+      <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
         {/* Image */}
         <div className="flex justify-center w-full">
           <Image
@@ -25,7 +25,7 @@ export default function AboutMe() {
             height={500}
             sizes="(max-width: 768px) 100vw, 400px"
             quality={85}
-            className="max-w-md rounded-xl shadow-md w-full h-auto object-cover"
+            className="max-w-md rounded-xl shadow-md w-[62%] h-auto object-cover"
           />
         </div>
 
