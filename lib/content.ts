@@ -26,7 +26,7 @@ export const siteContent = {
     button: "Learn More",
     bundle: {
       title: "Complete Bundle",
-      price: "$350",
+      price: "$325",
       features: [
         "Pre-PA Counseling Session (45 min)",
         "Essay Review (1 personal statement + 2 smaller essays)",
@@ -36,7 +36,7 @@ export const siteContent = {
     packages: [
       {
         title: "Pre-PA Counseling",
-        price: "$70 - $85",
+        price: "$50 - $70",
         features: [
           "30 – 45 min 1:1 session",
           "Early guidance for all things Pre-PA",
