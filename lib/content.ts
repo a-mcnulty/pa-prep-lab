@@ -26,7 +26,7 @@ export const siteContent = {
     button: "Learn More",
     bundle: {
       title: "Complete Bundle",
-      price: "$325",
+      price: "$350",
       features: [
         "Pre-PA Counseling Session (45 min)",
         "Essay Review (1 personal statement + 2 smaller essays)",
