@@ -6,7 +6,7 @@ import { trackContactFormSubmission } from '@/lib/analytics';
 
 // 🎨 Colors & Styles
 const formStyles = {
-  wrapper: "grid grid-cols-1 gap-6 bg-white p-8 rounded-lg shadow-md",
+  wrapper: "grid grid-cols-1 gap-6 bg-white p-8 rounded-lg",
   input: "border border-gray-300 p-3 rounded",
   textarea: "border border-gray-300 p-3 rounded h-32",
   smallTextarea: "border border-gray-300 p-3 rounded h-12",
@@ -15,7 +15,11 @@ const formStyles = {
   error: "text-red-600",
 };
 
-export default function ContactForm() {
+interface ContactFormProps {
+  showShadow?: boolean;
+}
+
+export default function ContactForm({ showShadow = true }: ContactFormProps) {
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
 
@@ -68,7 +72,7 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={formStyles.wrapper}>
+    <form onSubmit={handleSubmit} className={`${formStyles.wrapper} ${showShadow ? 'shadow-md' : ''}`}>
       <p className="text-sm text-gray-500 mt-4 leading-relaxed">{siteContent.contactForm.placeholders.name}</p>
       <input
         name="name"
