@@ -36,7 +36,7 @@ export const siteContent = {
     packages: [
       {
         title: "Pre-PA Counseling",
-        price: "$70 - $85",
+        price: "$50 - $70",
         features: [
           "30 – 45 min 1:1 session",
           "Early guidance for all things Pre-PA",
